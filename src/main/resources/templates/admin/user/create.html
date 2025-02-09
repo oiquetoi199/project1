@@ -17,26 +17,26 @@
             <div class="col-md-6 col-12 mx-auto">
                 <h3>Create a user</h3>
                 <hr />
-                <form action="/admin/user/create1" method="post">
-                    <div class="mb3">
+                <form th:action="@{/create1}" th:object="${user}" method="post">
+                    <div class="mb-3">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-control">
+                        <input type="email" id="email" class="form-control" th:field="*{email}">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Password</label>
-                        <input type="password" class="form-control">
+                        <input type="password" id="password" class="form-control" th:field="*{password}">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Phone number</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" id="phone" th:field="*{phone}">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Full name</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" id="name" th:field="*{fullName}">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Address </label>
-                        <input type="text" class="form-control">
+                        <label class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" th:field="*{address}">
                     </div>
                     <button type="submit" class="btn btn-primary">Create</button>
                 </form>
